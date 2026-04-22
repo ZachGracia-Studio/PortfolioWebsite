@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop TAD — Zach Gracia</title>
+  <meta name="description" content="Shop TAD — designer toys, apparel, and limited drops by Zach Gracia. Create What You Can't Explain.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Zach Gracia</a>
+      <div class="nav-links">
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="publications.html" class="nav-link">Publications</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="cart.html" class="nav-cart">Shop TAD</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile-overlay">
+    <a href="portfolio.html" class="nav-mobile-link">Portfolio</a>
+    <a href="about.html" class="nav-mobile-link">About</a>
+    <a href="publications.html" class="nav-mobile-link">Publications</a>
+    <a href="contact.html" class="nav-mobile-link">Contact</a>
+    <a href="cart.html" class="nav-mobile-link">Shop</a>
+  </div>
+
+  <!-- CART HERO -->
+  <section class="cart-hero">
+    <div class="cart-hero-bg"></div>
+    <div class="cart-hero-content">
+      <p class="cart-hero-eyebrow">TAD · Original Designer Toys & Goods</p>
+      <h1 class="cart-hero-title">SHOP<br>TAD</h1>
+      <p class="cart-hero-sub">Create What You Can't Explain</p>
+      <form class="cart-notify" onsubmit="this.querySelector('.cart-notify-btn').textContent = 'You\'re on the list'; this.querySelector('.cart-notify-btn').disabled = true; return false;">
+        <input
+          class="cart-notify-input"
+          type="email"
+          placeholder="Email for drop notifications"
+          aria-label="Email address"
+        >
+        <button type="submit" class="cart-notify-btn">Notify Me</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- DROPS -->
+  <section class="drops-section">
+    <div class="drops-inner">
+
+      <div class="drops-header">
+        <span class="label">Available Now & Coming Soon</span>
+        <h2 class="drops-title">The Drops</h2>
+      </div>
+
+      <div class="drops-grid">
+
+        <div class="drop-card">
+          <div class="drop-card-image">
+            <span class="drop-badge coming-soon">Coming Soon</span>
+            <div class="ph ph-1-1">
+              <span class="ph-label">TAD — Drop 001 Figure</span>
+            </div>
+          </div>
+          <div class="drop-card-info">
+            <h3 class="drop-card-title">TAD — Drop 001</h3>
+            <p class="drop-card-price tbd">Price TBD</p>
+          </div>
+        </div>
+
+        <div class="drop-card">
+          <div class="drop-card-image">
+            <span class="drop-badge coming-soon">Coming Soon</span>
+            <div class="ph ph-1-1">
+              <span class="ph-label">TAD — Apparel / Tee</span>
+            </div>
+          </div>
+          <div class="drop-card-info">
+            <h3 class="drop-card-title">TAD Apparel — Drop 001</h3>
+            <p class="drop-card-price tbd">Price TBD</p>
+          </div>
+        </div>
+
+        <div class="drop-card">
+          <div class="drop-card-image">
+            <span class="drop-badge coming-soon">Coming Soon</span>
+            <div class="ph ph-1-1">
+              <span class="ph-label">TAD — Print / Goods</span>
+            </div>
+          </div>
+          <div class="drop-card-info">
+            <h3 class="drop-card-title">TAD Print — Limited Edition</h3>
+            <p class="drop-card-price tbd">Price TBD</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BRAND STATEMENT -->
+  <div style="padding: 0 var(--gutter) clamp(80px, 12vw, 160px); max-width: var(--max-width); margin: 0 auto;">
+    <div style="border-top: 1px solid var(--border); padding-top: clamp(56px, 7vw, 88px); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+      <div>
+        <span class="label" style="display:block; margin-bottom: 16px;">About TAD</span>
+        <h2 style="font-family: var(--font-display); font-weight: 900; font-size: clamp(32px, 6vw, 72px); text-transform: uppercase; line-height: 0.95; margin-bottom: 28px;">
+          Create What<br>You Can't<br>Explain
+        </h2>
+        <a href="projects/tad.html" class="btn-ghost">Explore the Brand →</a>
+      </div>
+      <div>
+        <p style="font-size: clamp(14px, 1.2vw, 16px); line-height: 1.85; color: var(--text-secondary); margin-bottom: 20px;">
+          TAD is an original designer toy brand built on the belief that the most
+          compelling objects exist at the edge of language — things you can feel before
+          you can explain them.
+        </p>
+        <p style="font-size: clamp(14px, 1.2vw, 16px); line-height: 1.85; color: var(--text-secondary);">
+          Every drop is designed end-to-end by Zach Gracia: concept, sculpture,
+          colorway, packaging. Limited runs. No restocks. Made to be held, not just
+          displayed.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo">Zach Gracia</a>
+      <nav class="footer-links">
+        <a href="portfolio.html" class="footer-link">Portfolio</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="publications.html" class="footer-link">Publications</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:gracia.zachary@gmail.com" class="footer-link">Email</a>
+      </div>
+    </div>
+    <p class="footer-copy">Copyright ©2024 Zach Gracia. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

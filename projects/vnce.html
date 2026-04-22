@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VNCE — Zach Gracia</title>
+  <meta name="description" content="VNCE — Original character IP by Zach Gracia. A world unto itself.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .vnce-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+      margin-bottom: 40px;
+    }
+    .vnce-back:hover { color: var(--accent); }
+    .vnce-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--border);
+      margin-bottom: clamp(60px, 8vw, 100px);
+    }
+    .vnce-stat-cell {
+      padding: 28px 24px;
+      border-right: 1px solid var(--border);
+    }
+    .vnce-stat-cell:last-child { border-right: none; }
+    .vnce-stat-cell-label {
+      font-family: var(--font-ui);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .vnce-stat-cell-value {
+      font-family: var(--font-ui);
+      font-size: 0.88rem;
+      color: var(--text-primary);
+    }
+    @media (max-width: 600px) {
+      .vnce-stat-row { grid-template-columns: 1fr; }
+      .vnce-stat-cell { border-right: none; border-bottom: 1px solid var(--border); }
+      .vnce-stat-cell:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Zach Gracia</a>
+      <div class="nav-links">
+        <a href="../portfolio.html" class="nav-link">Portfolio</a>
+        <a href="../about.html" class="nav-link">About</a>
+        <a href="../publications.html" class="nav-link">Publications</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
+        <a href="../cart.html" class="nav-cart">Shop TAD</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile-overlay">
+    <a href="../portfolio.html" class="nav-mobile-link">Portfolio</a>
+    <a href="../about.html" class="nav-mobile-link">About</a>
+    <a href="../publications.html" class="nav-mobile-link">Publications</a>
+    <a href="../contact.html" class="nav-mobile-link">Contact</a>
+    <a href="../cart.html" class="nav-mobile-link">Shop</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="vnce-hero">
+    <div class="vnce-hero-glow"></div>
+    <div class="vnce-hero-content">
+      <div>
+        <a href="../portfolio.html" class="vnce-back">← Back to Work</a>
+        <p class="project-hero-label">Original IP · Character Design</p>
+        <h1 class="project-hero-title">VNCE</h1>
+        <p class="project-hero-tagline">Not a portfolio piece.<br>A world.</p>
+        <div style="margin-top: 32px;">
+          <a href="#origin" class="btn-primary">Explore the World →</a>
+        </div>
+      </div>
+      <div class="vnce-character-placeholder">
+        <div class="ph ph-2-3" style="max-width: 380px; width: 100%;">
+          <span class="ph-label">VNCE — Full Character Illustration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL WIDTH -->
+  <div class="gallery-full">
+    <div class="ph ph-21-9">
+      <span class="ph-label">VNCE — World Banner / Establishing Shot</span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="project-intro">
+    <div class="project-intro-inner">
+      <div class="project-intro-text">
+        <p>
+          VNCE is an original character created by Zach Gracia — not as a portfolio
+          demonstration, but as IP with intention. Built to carry its own mythology,
+          visual language, and narrative across mediums.
+        </p>
+        <p>
+          Where most characters exist to serve a project, VNCE exists to build a world.
+          The character's design draws from the same design DNA as TAD — bold, graphic,
+          made to translate from paper to sculpture to screen without losing anything.
+        </p>
+        <p>
+          VNCE is being developed across illustration, animation-ready model sheets,
+          and merchandise. This is the beginning of something longer.
+        </p>
+      </div>
+      <div class="project-meta">
+        <div class="project-meta-item">
+          <p class="project-meta-label">Type</p>
+          <p class="project-meta-value">Original Character IP</p>
+        </div>
+        <div class="project-meta-item">
+          <p class="project-meta-label">Disciplines</p>
+          <p class="project-meta-value">Character Design, World Building, Illustration, Merchandise</p>
+        </div>
+        <div class="project-meta-item">
+          <p class="project-meta-label">Status</p>
+          <p class="project-meta-value">Active Development</p>
+        </div>
+        <div class="project-meta-item">
+          <p class="project-meta-label">Creator</p>
+          <p class="project-meta-value">Zach Gracia — All IP owned</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <div class="project-body" id="origin">
+    <div class="project-body-inner">
+
+      <!-- Character Design -->
+      <div class="project-section">
+        <p class="project-section-label">Design</p>
+        <h2 class="project-section-title">The Character</h2>
+        <p class="project-section-body">
+          VNCE is designed with strict graphic discipline — every element of the
+          design has to work in silhouette, in full color, and in black and white.
+          Built to be versatile without being generic.
+        </p>
+        <div class="gallery-2col">
+          <div class="ph ph-4-3"><span class="ph-label">VNCE — Front / Side Turnaround</span></div>
+          <div class="ph ph-4-3"><span class="ph-label">VNCE — Expression Sheet</span></div>
+        </div>
+      </div>
+
+      <!-- Character Specs -->
+      <div class="project-section">
+        <div class="vnce-stat-row">
+          <div class="vnce-stat-cell">
+            <p class="vnce-stat-cell-label">Origin</p>
+            <p class="vnce-stat-cell-value">Original — Zach Gracia, 2023</p>
+          </div>
+          <div class="vnce-stat-cell">
+            <p class="vnce-stat-cell-label">Design Language</p>
+            <p class="vnce-stat-cell-value">Bold line, graphic palette, animation-ready</p>
+          </div>
+          <div class="vnce-stat-cell">
+            <p class="vnce-stat-cell-label">Mediums</p>
+            <p class="vnce-stat-cell-value">Illustration · Sculpture · Apparel</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- World Building -->
+      <div class="project-section">
+        <p class="project-section-label">World Building</p>
+        <h2 class="project-section-title">The World</h2>
+        <p class="project-section-body">
+          Characters don't exist in isolation. VNCE's world is being built out —
+          environments, supporting cast, lore, and a visual rulebook that lets the
+          world expand without losing coherence.
+        </p>
+        <div class="gallery-full" style="margin-bottom: 3px;">
+          <div class="ph ph-21-9"><span class="ph-label">VNCE — World / Environment Concept</span></div>
+        </div>
+        <div class="gallery-3col">
+          <div class="ph ph-1-1"><span class="ph-label">VNCE — Environment Detail 01</span></div>
+          <div class="ph ph-1-1"><span class="ph-label">VNCE — Environment Detail 02</span></div>
+          <div class="ph ph-1-1"><span class="ph-label">VNCE — Supporting Character Sketch</span></div>
+        </div>
+      </div>
+
+      <!-- Illustration -->
+      <div class="project-section">
+        <p class="project-section-label">Illustration</p>
+        <h2 class="project-section-title">The Work</h2>
+        <p class="project-section-body">
+          VNCE illustration spans finished editorial pieces, character studies,
+          and limited-run prints. Each piece is a window into the larger world.
+        </p>
+        <div class="gallery-asymm">
+          <div class="ph ph-4-3"><span class="ph-label">VNCE — Finished Illustration 01</span></div>
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <div class="ph ph-1-1"><span class="ph-label">VNCE — Study 01</span></div>
+            <div class="ph ph-1-1"><span class="ph-label">VNCE — Study 02</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Merchandise -->
+      <div class="project-section">
+        <p class="project-section-label">Merchandise</p>
+        <h2 class="project-section-title">Physical Objects</h2>
+        <p class="project-section-body">
+          VNCE merchandise is built in the same spirit as TAD: limited, intentional,
+          and designed to be objects worth owning.
+        </p>
+        <div class="gallery-3col">
+          <div class="ph ph-1-1"><span class="ph-label">VNCE — Figure / Toy</span></div>
+          <div class="ph ph-1-1"><span class="ph-label">VNCE — Apparel</span></div>
+          <div class="ph ph-1-1"><span class="ph-label">VNCE — Print</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROJECT NAV -->
+  <div style="padding: clamp(48px, 6vw, 72px) var(--gutter); border-top: 1px solid var(--border); max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+    <a href="tad.html" class="btn-ghost">← TAD</a>
+    <a href="disney.html" class="btn-ghost">Disney & Beyond →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="../index.html" class="footer-logo">Zach Gracia</a>
+      <nav class="footer-links">
+        <a href="../portfolio.html" class="footer-link">Portfolio</a>
+        <a href="../about.html" class="footer-link">About</a>
+        <a href="../publications.html" class="footer-link">Publications</a>
+        <a href="../contact.html" class="footer-link">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:gracia.zachary@gmail.com" class="footer-link">Email</a>
+      </div>
+    </div>
+    <p class="footer-copy">Copyright ©2024 Zach Gracia. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
