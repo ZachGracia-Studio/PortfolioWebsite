@@ -854,3 +854,7 @@ main > .gallery-full {
 
 .motion-off .has-motion *, .motion-off .reveal { animation: none !important; opacity: 1 !important; transform: none !important; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+/* home hero: the portrait is a still, no entrance on the sheet */
+.has-motion .hero-plate .ph.mount-paper { animation: none; }
+.hero-plate .ph.mount-paper > img { inset: 4%; width: 92%; height: 92%; object-fit: contain; }
