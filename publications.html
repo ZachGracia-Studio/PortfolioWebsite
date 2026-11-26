@@ -41,72 +41,88 @@
   <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="page-header-inner">
-      <span class="label" style="display:block; margin-bottom: 16px;">Writing & Press</span>
+      <span class="label" style="display:block; margin-bottom: 16px;">Writing and press</span>
       <h1 class="page-header-title page-header-title--long">PUBLICATIONS</h1>
     </div>
   </div>
 
   <!-- INTRO TEXT -->
-  <div style="padding: 0 var(--gutter) 64px; max-width: var(--max-width); margin: 0 auto;">
-    <p style="font-size: clamp(15px, 1.3vw, 18px); line-height: 1.8; color: var(--text-secondary); max-width: 680px;">
+  <div class="pub-intro">
+    <p>
       Writing, press coverage and editorial work on creative direction, original IP and the toy and entertainment industry.
     </p>
   </div>
 
-  <!-- PUBLICATIONS GRID -->
+  <!-- PUBLICATIONS: list beside one plate that turns as you read -->
+  <div class="pub-layout">
   <div class="publications-grid">
 
-    <div class="pub-card">
-      <p class="pub-card-type">Newsletter · Creative Direction</p>
+    <div class="pub-card" tabindex="0" data-src="images/work/vnce-pencil-front.webp" data-alt="Pencil drawing of VNCE, front view" data-caption="VNCE, pencil">
+      <img class="pub-inline" src="images/work/vnce-pencil-front.webp" alt="" width="1184" height="864" loading="lazy">
+      <div class="pub-text">
+      <p class="pub-card-type">Newsletter · creative direction</p>
       <h2 class="pub-card-title">Building IP in a World Full of Content: Why Intentional Worlds Win</h2>
       <p class="pub-card-desc">
         There's more content than ever and less cultural stickiness. The argument for
         building IP with depth — characters, worlds, and lore that reward investment —
         rather than chasing short-form visibility.
       </p>
-      <p class="pub-card-meta">Add link when published</p>
+      <p class="pub-card-meta">In progress</p>
+      </div>
     </div>
 
-    <div class="pub-card">
-      <p class="pub-card-type">Newsletter · Toy Design</p>
+    <div class="pub-card" tabindex="0" data-src="images/work/slinky-dog-stylization-callouts-1270.webp" data-alt="Slinky Dog stylization with design callouts" data-caption="Slinky Dog, stylization callouts">
+      <img class="pub-inline" src="images/work/slinky-dog-stylization-callouts-1270.webp" alt="" width="1270" height="1185" loading="lazy">
+      <div class="pub-text">
+      <p class="pub-card-type">Newsletter · toy design</p>
       <h2 class="pub-card-title">Why Designer Toys Are Having a Moment (And What It Says About Culture)</h2>
       <p class="pub-card-desc">
         Designer toys sit at the junction of art, commerce, and nostalgia. An analysis
         of why the category is surging, what it means for independent creators, and what
         the major brands are getting wrong trying to compete.
       </p>
-      <p class="pub-card-meta">Add link when published</p>
+      <p class="pub-card-meta">In progress</p>
+      </div>
     </div>
 
-    <div class="pub-card">
-      <p class="pub-card-type">Press · Industry</p>
+    <div class="pub-card" tabindex="0" data-src="images/work/disney-doorables-lineup-front-signature-doors-1600.webp" data-alt="Disney Doorables figures lined up in front of their signature doors" data-caption="Doorables">
+      <img class="pub-inline" src="images/work/disney-doorables-lineup-front-signature-doors-1600.webp" alt="" width="1600" height="856" loading="lazy">
+      <div class="pub-text">
+      <p class="pub-card-type">Press · industry</p>
       <h2 class="pub-card-title">Toy of the Year Awards: Doorables</h2>
       <p class="pub-card-desc">
         Industry coverage of Doorables winning Collectible of the Year at the 2019 Toy of the Year Awards. I art directed the line.
       </p>
       <p class="pub-card-meta">Toy of the Year Awards, 2019</p>
+      </div>
     </div>
 
-    <div class="pub-card">
+    <div class="pub-card" tabindex="0" data-src="images/work/snow-white-lithograph-final-painted-artwork-1131.webp" data-alt="Final painted Snow White lithograph artwork" data-caption="Art of Snow White, 2017">
+      <img class="pub-inline" src="images/work/snow-white-lithograph-final-painted-artwork-1131.webp" alt="" width="1131" height="1600" loading="lazy">
+      <div class="pub-text">
       <p class="pub-card-type">Press · Disney</p>
       <h2 class="pub-card-title">Disney Store featured artist: Art of Snow White</h2>
       <p class="pub-card-desc">
         Coverage of my selection as a Disney Store featured artist for the Art of Snow White lithograph set, a limited-edition series made for the Disney Store.
       </p>
       <p class="pub-card-meta">Disney Store, 2017</p>
+      </div>
     </div>
 
   </div>
 
+    <figure class="pub-stage">
+        <div class="ph has-img mount-paper" style="aspect-ratio: 4 / 3"><img src="images/work/doorables-frozen-chip-art-drawover-red-blue-1600.webp" alt="Frozen Doorables chip art with red and blue revision drawovers" width="1600" height="1039" loading="lazy"><span class="ph-label">Doorables, Frozen chip-art drawover</span></div>
+      </figure>
+  </div>
+
   <!-- NEWSLETTER CTA -->
-  <div style="padding: 0 var(--gutter) clamp(80px, 12vw, 160px); max-width: var(--max-width); margin: 0 auto;">
+  <div class="newsletter-wrap">
     <div class="newsletter-cta">
       <div>
         <span class="label" style="display:block; margin-bottom: 16px;">Newsletter</span>
-        <h2 style="font-family: var(--font-display); font-weight: 800; font-size: clamp(28px, 4vw, 52px); text-transform: uppercase; line-height: 1.1; margin-bottom: 16px;">
-          Get the Newsletter
-        </h2>
-        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;">
+        <h2 class="newsletter-title">Get the newsletter</h2>
+        <p class="newsletter-desc">
           Writing on design, toy culture and building original IP, from inside the industry.
         </p>
       </div>
@@ -125,12 +141,7 @@
           required
           placeholder="your@email.com"
         >
-        <button
-          type="submit"
-          style="padding: 13px 22px; background: var(--accent); color: #080808; font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.15s ease; white-space: nowrap;"
-          onmouseover="this.style.background='var(--accent-light)'"
-          onmouseout="this.style.background='var(--accent)'"
-        >Subscribe <span aria-hidden="true">→</span></button>
+        <button type="submit" class="newsletter-btn">Subscribe</button>
       </form>
     </div>
   </div>
@@ -157,5 +168,34 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // The header plate shows the work behind whichever entry you're reading.
+    (function () {
+      const stage = document.querySelector('.pub-stage');
+      if (!stage) return;
+      const img = stage.querySelector('img');
+      const label = stage.querySelector('.ph-label');
+      const first = { src: img.getAttribute('src'), alt: img.alt, caption: label.textContent };
+      let current = first.src, timer;
+      const show = (d) => {
+        if (d.src === current) return;
+        current = d.src;
+        stage.classList.add('is-turning');
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          img.src = d.src; img.alt = d.alt; label.textContent = d.caption;
+          stage.classList.remove('is-turning');
+        }, 160);
+      };
+      document.querySelectorAll('.pub-card[data-src]').forEach((card) => {
+        const d = { src: card.dataset.src, alt: card.dataset.alt, caption: card.dataset.caption };
+        card.addEventListener('mouseenter', () => show(d));
+        card.addEventListener('focusin', () => show(d));
+      });
+      const list = document.querySelector('.publications-grid');
+      list.addEventListener('mouseleave', () => show(first));
+    })();
+  </script>
+
 </body>
 </html>
