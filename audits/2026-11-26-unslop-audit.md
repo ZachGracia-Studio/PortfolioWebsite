@@ -147,7 +147,7 @@ Each finding gives the location, what's wrong and a one-line fix. **Rank** is on
 | F1 | L91 | "Not a portfolio piece. / A world." is the third use of the formula, and it's the page's headline. | Give VNCE a real logline: who they are and where they live. |
 | F2 | L116–128, L160–162 | "IP with intention", "built to carry its own mythology", "versatile without being generic". All abstract, with no lore shown. | Show one piece of lore: a place name, a rule of the world, a first sketch with the date on it. |
 | F2 | L171–186 | A 3-cell "spec" table of generic attributes ("Bold line, graphic palette, animation-ready"). | Replace it with a real model-sheet excerpt or colour callouts. |
-| F2 | L229 | "TAD  limited" is missing a colon or dash (typo; also TAD L114, L182). | Fix the punctuation. |
+| (withdrawn) | L229 | Withdrawn: this was reported as a missing colon, but the colon is there. The tool I used to list the file had stripped it (also applies to TAD L114 and L182). | No fix needed. |
 
 ### 2j. `projects/disney.html`
 
@@ -188,7 +188,7 @@ Each finding gives the location, what's wrong and a one-line fix. **Rank** is on
 - Copy rewrite in first person, removing the repeated phrases.
 - Remove stock decoration: grain, ghost "ZG", accent line, Scroll cue, ghost numerals, radial glows, hover-zoom with overlay.
 - Break the identical case-study mould and the uniform 3px grid.
-- Clean up the portfolio filter and card links, merge or hide Publications, fix the © year, typos and inline styles.
+- Clean up the portfolio filter and card links, merge or hide Publications, fix the © year and inline styles.
 
 **Leave it:** nav and mobile menu, reset and transitions, the exhibitions list, the Disney sub-project structure, the "feel before you can explain" line.
 
@@ -238,7 +238,7 @@ None of these pieces are published (they all say "Add link when published"). On 
 
 | Pass | What it covers | Needs from you |
 |---|---|---|
-| **A: Trust fixes** | Working Netlify forms, real social URLs, remove internal notes and unpublished cards, © year, contrast, "Available Now" label, typos | Your Instagram and LinkedIn URLs, and a decision on the newsletter and waitlist |
+| **A: Trust fixes** | Working Netlify forms, real social URLs, remove internal notes and unpublished cards, © year, contrast, "Available Now" label | Your Instagram and LinkedIn URLs, and a decision on the newsletter and waitlist |
 | **B: Copy and positioning** | "Artist · Designer · World Builder" everywhere, first-person rewrite, stock phrases out, Publications decision | 10 minutes of your notes or voice memo per world, so the voice is yours |
 | **C: Type, colour and decoration** | New palette, two-face type system, cut labels, remove grain, glows, ghosts and hover-zoom, consolidate inline styles | Pick the display face (or provide lettering), and 3–5 key artworks to sample colour from |
 | **D: Layout and case studies** | Studio-index home, scrapbook galleries, per-world case-study layouts, captions as gallery labels | Image files and a rough order of what to show |
