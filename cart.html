@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop TAD — Zach Gracia</title>
-  <meta name="description" content="Shop TAD — designer toys, apparel, and limited drops by Zach Gracia. Create What You Can't Explain.">
+  <meta name="description" content="Shop TAD, The Art Department: apparel and art prints by Zach Gracia.">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/catalogue.css">
 </head>
 <body>
 
@@ -19,7 +20,7 @@
         <a href="about.html" class="nav-link">About</a>
         <a href="publications.html" class="nav-link">Publications</a>
         <a href="contact.html" class="nav-link">Contact</a>
-        <a href="cart.html" class="nav-cart">Shop TAD</a>
+        <a href="cart.html" class="nav-cart">TAD drops</a>
       </div>
       <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
@@ -41,9 +42,9 @@
   <section class="cart-hero">
     <div class="cart-hero-bg"></div>
     <div class="cart-hero-content">
-      <p class="cart-hero-eyebrow">TAD · Original Designer Toys & Goods</p>
+      <p class="cart-hero-eyebrow">The Art Department · apparel and art prints</p>
       <h1 class="cart-hero-title">SHOP<br>TAD</h1>
-      <p class="cart-hero-sub">Create What You Can't Explain</p>
+      <p class="cart-hero-sub">Create what you can't explain</p>
       <form class="cart-notify" name="tad-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="tad-waitlist">
         <p hidden>
@@ -57,9 +58,9 @@
           name="email"
           autocomplete="email"
           required
-          placeholder="Email for drop notifications"
+          placeholder="Email me about new releases"
         >
-        <button type="submit" class="cart-notify-btn">Notify Me</button>
+        <button type="submit" class="cart-notify-btn">Notify me</button>
       </form>
     </div>
   </section>
@@ -69,51 +70,29 @@
     <div class="drops-inner">
 
       <div class="drops-header">
-        <span class="label">Available Now & Coming Soon</span>
-        <h2 class="drops-title">The Drops</h2>
+        <span class="label">Coming soon</span>
+        <h2 class="drops-title">What's coming</h2>
       </div>
 
       <div class="drops-grid">
-
         <div class="drop-card">
           <div class="drop-card-image">
-            <span class="drop-badge coming-soon">Coming Soon</span>
-            <div class="ph ph-1-1">
-              <span class="ph-label">TAD — Drop 001 Figure</span>
-            </div>
+            <div class="ph ph-3-4"><span class="ph-label">TAD, apparel</span></div>
           </div>
           <div class="drop-card-info">
-            <h3 class="drop-card-title">TAD — Drop 001</h3>
-            <p class="drop-card-price tbd">Price TBD</p>
+            <h3 class="drop-card-title">Apparel</h3>
+            <p class="drop-card-price tbd">Coming soon</p>
           </div>
         </div>
-
         <div class="drop-card">
           <div class="drop-card-image">
-            <span class="drop-badge coming-soon">Coming Soon</span>
-            <div class="ph ph-1-1">
-              <span class="ph-label">TAD — Apparel / Tee</span>
-            </div>
+            <div class="ph ph-3-4"><span class="ph-label">TAD, art print</span></div>
           </div>
           <div class="drop-card-info">
-            <h3 class="drop-card-title">TAD Apparel — Drop 001</h3>
-            <p class="drop-card-price tbd">Price TBD</p>
+            <h3 class="drop-card-title">Art prints</h3>
+            <p class="drop-card-price tbd">Coming soon</p>
           </div>
         </div>
-
-        <div class="drop-card">
-          <div class="drop-card-image">
-            <span class="drop-badge coming-soon">Coming Soon</span>
-            <div class="ph ph-1-1">
-              <span class="ph-label">TAD — Print / Goods</span>
-            </div>
-          </div>
-          <div class="drop-card-info">
-            <h3 class="drop-card-title">TAD Print — Limited Edition</h3>
-            <p class="drop-card-price tbd">Price TBD</p>
-          </div>
-        </div>
-
       </div>
 
     </div>
@@ -121,25 +100,14 @@
 
   <!-- BRAND STATEMENT -->
   <div style="padding: 0 var(--gutter) clamp(80px, 12vw, 160px); max-width: var(--max-width); margin: 0 auto;">
-    <div style="border-top: 1px solid var(--border); padding-top: clamp(56px, 7vw, 88px); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+    <div class="tad-statement">
       <div>
         <span class="label" style="display:block; margin-bottom: 16px;">About TAD</span>
-        <h2 style="font-family: var(--font-display); font-weight: 900; font-size: clamp(32px, 6vw, 72px); text-transform: uppercase; line-height: 0.95; margin-bottom: 28px;">
-          Create What<br>You Can't<br>Explain
-        </h2>
-        <a href="projects/tad.html" class="btn-ghost">Explore the Brand <span aria-hidden="true">→</span></a>
+        <p class="about-teaser-quote">TAD, short for The Art Department, is the home for my apparel, my art prints and anything I'm ready to sell.</p>
       </div>
       <div>
-        <p style="font-size: clamp(14px, 1.2vw, 16px); line-height: 1.85; color: var(--text-secondary); margin-bottom: 20px;">
-          TAD is an original designer toy brand built on the belief that the most
-          compelling objects exist at the edge of language — things you can feel before
-          you can explain them.
-        </p>
-        <p style="font-size: clamp(14px, 1.2vw, 16px); line-height: 1.85; color: var(--text-secondary);">
-          Every drop is designed end-to-end by Zach Gracia: concept, sculpture,
-          colorway, packaging. Limited runs. No restocks. Made to be held, not just
-          displayed.
-        </p>
+        <p class="about-teaser-body">Things you can feel before you can explain them.</p>
+        <a href="projects/tad.html" class="btn-ghost">More about TAD</a>
       </div>
     </div>
   </div>
@@ -157,12 +125,12 @@
         <a href="contact.html" class="footer-link">Contact</a>
       </nav>
       <div class="footer-social">
-        <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>
-        <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a href="https://www.instagram.com/zach_gracia/" class="footer-link" target="_blank" rel="noopener">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a href="https://www.linkedin.com/in/zacharygracia" class="footer-link" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a href="mailto:gracia.zachary@gmail.com" class="footer-link">Email</a>
       </div>
     </div>
-    <p class="footer-copy">Copyright ©2024 Zach Gracia. All rights reserved.</p>
+    <p class="footer-copy">© 2026 Zach Gracia</p>
   </footer>
 
   <script src="js/main.js"></script>

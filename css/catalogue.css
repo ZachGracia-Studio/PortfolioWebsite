@@ -1,0 +1,479 @@
+/* ==========================================================
+   CATALOGUE DIRECTION (preview)
+   The site as an exhibition catalogue: quiet ink ground, literary
+   serif text, condensed display type for names and world titles
+   only, and every piece of work shown as a numbered plate with a
+   heavy keyline and a wall label beneath it.
+   Loaded after styles.css. Folded into it once approved.
+   ========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap');
+
+:root {
+  /* ink ramp: neutral black with a trace of warmth, paper-white type */
+  --bg: #0b0b0c;
+  --bg-surface: #121214;
+  --bg-elevated: #18181b;
+  --text-primary: #eeeae2;   /* 16.4:1 on bg */
+  --text-secondary: #a9a59d; /* 8.0:1 on bg */
+  --text-muted: #8f8a82;     /* 5.7:1 on bg, 5.2:1 on raised */
+  --keyline: #8f8a82;        /* plate outline, 5.7:1 */
+  --border: rgba(238, 234, 226, 0.09);
+  --border-light: rgba(238, 234, 226, 0.16);
+  --border-control: #6b6862;
+
+  /* brand teal stays, used for plate numbers, the current page and focus only */
+  --accent: #468C8C;
+
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-ui: 'Newsreader', Georgia, serif;
+  --font-body: 'Newsreader', Georgia, serif;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 150ms var(--ease);
+  --transition: 240ms var(--ease);
+  --transition-slow: 400ms var(--ease);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  counter-reset: plate;
+}
+body::after { display: none; }               /* grain off */
+strong { font-weight: 500; }
+
+/* ---------- decoration removed ---------- */
+.hero-bg-text, .hero-accent-line, .hero-scroll, .hero-divider,
+.tad-hero-bg, .vnce-hero-glow, .cart-hero-bg, .sub-project-number,
+.project-hero > div[style*="radial-gradient"] { display: none !important; }
+
+/* ---------- labels: sentence case, no tracking ---------- */
+.label, .hero-eyebrow, .featured-card-brand, .project-card-brand,
+.project-hero-label, .project-meta-label, .project-section-label,
+.credential-group-label, .form-label, .pub-card-type, .cart-hero-eyebrow,
+.vnce-stat-cell-label, .stat-label, .filter-tab, .drop-badge,
+.tad-back, .vnce-back, .disney-back {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-secondary);
+}
+
+/* ---------- navigation ---------- */
+.nav.scrolled { background: rgba(11, 11, 12, 0.97); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+.nav-link, .nav-cart {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-secondary);
+  border: 0;
+  padding: 8px 0;
+}
+.nav-link::after { height: 2px; bottom: 2px; }
+.nav-cart:hover { background: none; color: var(--text-primary); }
+.nav-mobile-link { font-weight: 600; color: var(--text-primary); }
+
+/* ---------- buttons and links ---------- */
+.btn-primary, .cart-notify-btn {
+  background: var(--text-primary);
+  color: var(--bg);
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 12px 22px;
+  min-height: 48px;
+}
+.btn-primary:hover, .cart-notify-btn:hover { background: #ffffff; transform: none; }
+.btn-secondary {
+  font-family: var(--font-ui);
+  font-size: 17px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-primary);
+  border-color: var(--border-light);
+  min-height: 48px;
+  padding: 11px 22px;
+}
+.btn-ghost, .featured-card-cta {
+  font-family: var(--font-ui);
+  font-size: 17px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--keyline);
+  text-underline-offset: 4px;
+  min-height: 32px;
+}
+.btn-ghost:hover { gap: 8px; text-decoration-color: var(--text-primary); }
+
+/* ---------- the plate: signature detail ----------
+   Every piece of work sits in a heavy keyline frame, numbered
+   in teal, with its wall label set beneath the frame.        */
+.ph {
+  background: var(--bg-elevated);
+  border: 2px solid var(--keyline);
+  overflow: visible;
+  counter-increment: plate;
+  margin-bottom: 52px;
+}
+.ph::before { display: none; }
+.ph-label {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 12px 0 0;
+  text-align: left;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+.ph-label::before {
+  content: 'Pl. ' counter(plate, decimal-leading-zero) '\2003' / '';
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--accent);
+}
+.ph-label::after { content: none; }
+.gallery-2col, .gallery-3col, .gallery-asymm { column-gap: 24px; margin-bottom: 0; }
+.gallery-2col { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.gallery-3col { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.gallery-asymm { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+.gallery-full { margin-bottom: 0 !important; }
+.gallery-asymm > div[style] { gap: 0 !important; }
+
+/* no zoom on hover */
+.featured-card:hover .featured-card-image .ph,
+.project-card:hover .project-card-image .ph,
+.drop-card:hover .drop-card-image .ph { transform: none; }
+
+/* ---------- one left edge for every section ---------- */
+.nav-inner, .featured-work-header, .featured-work-grid, .portfolio-grid,
+.publications-grid, .index-line { max-width: calc(var(--max-width) + 2 * var(--gutter)); }
+
+/* page-specific inline styles that still force the old label look */
+html body .vnce-back, html body .tad-back, html body .disney-back,
+html body .vnce-stat-cell-label {
+  font-family: var(--font-ui); font-size: 15px; letter-spacing: 0;
+  text-transform: none; color: var(--text-secondary); font-weight: 400;
+}
+
+/* ---------- hero ---------- */
+.hero { min-height: 92vh; justify-content: center; }
+.hero-content {
+  padding-bottom: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 64px;
+  align-items: center;
+}
+.hero-plate .ph { aspect-ratio: 4 / 5; margin-bottom: 0; }
+.hero-plate .ph-label { position: static; padding: 12px 0 0; }
+.hero-plate { margin: 0 0 40px; }
+.hero-eyebrow { margin-bottom: 24px; }
+.hero-title {
+  font-weight: 600;
+  font-size: clamp(84px, 15vw, 216px);
+  line-height: 0.86;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+}
+.hero-roles { gap: 0; margin-bottom: 24px; }
+.hero-role {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+.hero-role-sep { color: var(--text-muted); opacity: 1; font-size: clamp(26px, 3vw, 40px); margin: 0 14px; font-family: var(--font-display); }
+.hero-statement { font-size: clamp(19px, 1.6vw, 22px); line-height: 1.5; max-width: 34ch; color: var(--text-secondary); margin-bottom: 40px; }
+.hero-eyebrow, .hero-title, .hero-roles, .hero-statement, .hero-actions { animation-duration: 0.5s; }
+
+/* ---------- home: three worlds as plates ---------- */
+.featured-work-header { padding-bottom: 32px; align-items: baseline; }
+.featured-work-header .label { font-size: 17px; color: var(--text-primary); }
+.featured-work-grid { gap: 32px 40px; }
+.featured-card { background: none; overflow: visible; display: flex; flex-direction: column; }
+.featured-card > * { grid-area: auto; }
+.featured-card-overlay { display: none; }
+.featured-work-grid { grid-template-rows: auto auto; }
+.featured-card { min-width: 0; }
+.featured-card-image, .featured-card-image .ph { height: auto; overflow: visible; }
+.featured-card:not(:first-child) .ph { aspect-ratio: 16 / 10; }
+.featured-card:first-child .featured-card-image { flex: 1; display: flex; }
+.featured-card:first-child .featured-card-image .ph { min-height: 520px; height: auto; flex: 1; aspect-ratio: auto; }
+.featured-card .ph { margin-bottom: 0; }
+.featured-card .ph-label { position: static; padding: 0; text-align: center; color: var(--text-muted); }
+.featured-card .ph-label::before { content: none; }
+.featured-card-content {
+  position: relative;
+  transform: none;
+  padding: 14px 0 0 56px;
+  align-self: stretch;
+}
+.featured-card-content::before {
+  content: 'Pl. ' counter(plate, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 20px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--accent);
+}
+.featured-card { counter-increment: plate; }
+.featured-card .ph { counter-increment: none; }
+.featured-card-title {
+  font-family: var(--font-ui);
+  font-size: 24px;
+  font-weight: 500;
+  font-style: italic;
+  text-transform: none;
+  line-height: 1.2;
+  margin: 0;
+}
+.featured-card-brand { margin: 2px 0 0; color: var(--text-muted); }
+.featured-card-desc {
+  opacity: 1;
+  transform: none;
+  font-size: 17px;
+  color: var(--text-secondary);
+  max-width: 46ch;
+  margin: 8px 0 10px;
+}
+.featured-card-cta { display: inline-flex; }
+
+/* ---------- home: index line replaces the stats strip ---------- */
+.index-line {
+  margin: 0 auto;
+  padding: 56px var(--gutter);
+  background-image: linear-gradient(var(--keyline), var(--keyline));
+  background-size: calc(100% - 2 * var(--gutter)) 2px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: minmax(120px, 200px) 1fr;
+  gap: 24px;
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.45;
+}
+.index-line dt { font-size: 15px; color: var(--text-secondary); padding-top: 6px; }
+.index-line dd { margin: 0; max-width: 40ch; }
+
+/* ---------- about teaser ---------- */
+.about-teaser-quote {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  text-transform: none;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.25;
+}
+.about-teaser-quote em { color: var(--text-primary); font-style: italic; }
+.about-teaser-body { font-size: 18px; color: var(--text-secondary); }
+.about-teaser-inner { align-items: start; }
+
+/* ---------- page and project titles ---------- */
+.page-header-title, .project-hero-title, .about-hero-title, .contact-title, .cart-hero-title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.project-hero-tagline, .cart-hero-sub {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(22px, 2.4vw, 30px);
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+.project-section-title, .achievements-title, .drops-title {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  text-transform: none;
+  font-size: clamp(32px, 3.6vw, 48px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.project-section-label { margin-bottom: 8px; color: var(--text-muted); }
+.project-section-body, .project-intro-text, .about-bio-text p, .about-hero-intro, .contact-desc {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+.project-section-body { max-width: 62ch; }
+.project-intro { border-bottom: 2px solid var(--keyline); }
+.project-meta-label { font-size: 14px; color: var(--text-muted); margin-bottom: 2px; }
+.project-meta-value { font-family: var(--font-ui); font-size: 17px; color: var(--text-primary); }
+.about-hero-role {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(26px, 3vw, 40px);
+  text-transform: none;
+  color: var(--text-primary);
+}
+.about-bio-text strong { color: var(--text-primary); font-weight: 400; }
+.credential-item { font-family: var(--font-ui); font-size: 16px; }
+.credential-item strong { font-weight: 500; }
+
+/* exhibitions become the catalogue index */
+.achievements { border-top: 2px solid var(--keyline); }
+.achievement-year { font-family: var(--font-display); font-weight: 600; font-size: 18px; color: var(--text-primary); }
+.achievement-title { font-family: var(--font-ui); font-size: 18px; }
+.achievement-venue { font-family: var(--font-ui); font-size: 16px; color: var(--text-secondary); font-style: italic; }
+
+/* VNCE spec table, catalogue style */
+.vnce-stat-row { border: 0; border-top: 2px solid var(--keyline); border-bottom: 1px solid var(--border); }
+.vnce-stat-cell { padding: 20px 24px 20px 0; border-right: 0; }
+.vnce-stat-cell-value { font-family: var(--font-ui); font-size: 17px; }
+
+/* project-to-project nav */
+.project-body + div[style*="justify-content"] { border-top: 2px solid var(--keyline) !important; }
+
+/* footer */
+.footer { border-top: 2px solid var(--keyline); }
+.footer-logo { font-weight: 600; color: var(--text-primary); }
+.footer-link, .footer-social a {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-secondary);
+  padding: 6px 0;
+}
+.footer-copy { font-size: 14px; color: var(--text-muted); }
+
+@media (max-width: 1024px) {
+  .featured-work-grid { grid-template-rows: none; }
+  .featured-card:first-child .featured-card-image .ph { min-height: 0; aspect-ratio: 4 / 3; }
+  .hero-content { grid-template-columns: 1fr; gap: 40px; }
+  .hero-plate { max-width: 420px; }
+}
+@media (max-width: 768px) {
+  body { font-size: 17px; }
+  .index-line { grid-template-columns: 1fr; gap: 8px; padding: 40px var(--gutter); }
+  .achievement-item { grid-template-columns: 56px 1fr; }
+  .achievement-venue { display: block; grid-column: 2; text-align: left; white-space: normal; margin-top: -12px; }
+  .hero-role-sep { margin: 0 8px; }
+  .gallery-2col, .gallery-3col, .gallery-asymm { grid-template-columns: minmax(0, 1fr); row-gap: 0; }
+}
+
+/* full-width plates keep the page gutter so their wall label lines up */
+main > .gallery-full {
+  padding: 0 var(--gutter);
+  max-width: calc(var(--max-width) + 2 * var(--gutter));
+  margin: 0 auto !important;
+}
+
+/* ---------- real artwork inside plates ---------- */
+.ph.has-img { background: var(--bg); }
+.ph.has-img > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.featured-card .ph.has-img .ph-label,
+.project-card .ph.has-img .ph-label { display: none; }
+.hero-plate .ph-label { position: absolute; top: 100%; padding: 12px 0 0; }
+
+/* TAD statement on the shop page */
+.tad-statement {
+  border-top: 2px solid var(--keyline);
+  padding-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+@media (max-width: 768px) { .tad-statement { grid-template-columns: 1fr; gap: 24px; } }
+
+/* uncropped plates never get taller than most of the screen */
+.ph.has-img[style*="--r"] {
+  max-width: min(100%, calc(78vh * var(--r)));
+  margin-left: auto;
+  margin-right: auto;
+}
+.gallery-2col > .ph.has-img, .gallery-3col > .ph.has-img, .gallery-asymm .ph.has-img { margin-left: 0; }
+
+/* ---------- Work page: cards become plates too ---------- */
+.portfolio-grid { gap: 48px 32px; }
+.project-card { background: none; overflow: visible; counter-increment: plate; }
+.project-card .ph { margin-bottom: 0; counter-increment: none; }
+.project-card .ph-label { display: none; }
+.project-card-info {
+  position: relative;
+  border-top: 0;
+  padding: 14px 0 0 56px;
+  align-items: flex-start;
+}
+.project-card-info::before {
+  content: 'Pl. ' counter(plate, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 20px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--accent);
+}
+.project-card-brand { margin-bottom: 2px; color: var(--text-muted); }
+.project-card-title { font-family: var(--font-ui); font-size: 22px; font-weight: 400; font-style: italic; }
+.project-card-arrow { display: none; }
+.ph.has-img > img[src*="tad-jpg"] { object-position: 50% 18%; }
+
+/* filters: plain text toggles, the current one underlined */
+.filter-tabs { border: 0; gap: 24px; }
+.filter-tab {
+  border: 0 !important;
+  padding: 8px 0;
+  font-size: 17px;
+  color: var(--text-secondary);
+  background: none !important;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+.filter-tab:hover { color: var(--text-primary); }
+.filter-tab.active { color: var(--text-primary); text-decoration-color: var(--accent); }
+
+/* ---------- shop cards ---------- */
+.drop-card { background: none; }
+.drop-card .ph { margin-bottom: 0; }
+.drop-card .ph-label { display: none; }
+.drop-card-info { padding: 14px 0 0; }
+.drop-card-title { font-family: var(--font-ui); font-size: 22px; font-weight: 400; font-style: italic; margin-bottom: 2px; }
+.drop-card-price.tbd {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-secondary);
+}
+.drops-grid { gap: 32px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
