@@ -9,6 +9,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Zach Gracia</a>
@@ -19,13 +21,13 @@
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="cart.html" class="nav-cart">Shop TAD</a>
       </div>
-      <button class="nav-hamburger" aria-label="Open menu">
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div class="nav-mobile-overlay">
+  <div class="nav-mobile-overlay" id="mobile-menu">
     <a href="portfolio.html" class="nav-mobile-link">Portfolio</a>
     <a href="about.html" class="nav-mobile-link">About</a>
     <a href="publications.html" class="nav-mobile-link">Publications</a>
@@ -33,11 +35,13 @@
     <a href="cart.html" class="nav-mobile-link">Shop</a>
   </div>
 
+  <main id="main">
+
   <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="page-header-inner">
       <span class="label" style="display:block; margin-bottom: 16px;">Writing & Press</span>
-      <h1 class="page-header-title">PUBLICATIONS</h1>
+      <h1 class="page-header-title page-header-title--long">PUBLICATIONS</h1>
     </div>
   </div>
 
@@ -123,7 +127,7 @@
 
   <!-- NEWSLETTER CTA -->
   <div style="padding: 0 var(--gutter) clamp(80px, 12vw, 160px); max-width: var(--max-width); margin: 0 auto;">
-    <div style="border: 1px solid var(--border); padding: clamp(40px, 6vw, 72px); display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+    <div class="newsletter-cta">
       <div>
         <span class="label" style="display:block; margin-bottom: 16px;">Newsletter</span>
         <h2 style="font-family: var(--font-display); font-weight: 800; font-size: clamp(28px, 4vw, 52px); text-transform: uppercase; line-height: 1.1; margin-bottom: 16px;">
@@ -134,11 +138,20 @@
           inside the industry. No fluff.
         </p>
       </div>
-      <form style="display: flex; gap: 0;" onsubmit="this.querySelector('button').textContent = 'Subscribed'; this.querySelector('button').disabled = true; return false;">
+      <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p hidden>
+          <label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+        <label class="visually-hidden" for="newsletter-email">Email address</label>
         <input
+          class="newsletter-input"
+          id="newsletter-email"
           type="email"
+          name="email"
+          autocomplete="email"
+          required
           placeholder="your@email.com"
-          style="flex:1; background: var(--bg-surface); border: 1px solid var(--border); border-right: none; color: var(--text-primary); font-family: var(--font-body); font-size: 0.85rem; padding: 13px 16px; outline: none;"
         >
         <button
           type="submit"
@@ -149,6 +162,8 @@
       </form>
     </div>
   </div>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">

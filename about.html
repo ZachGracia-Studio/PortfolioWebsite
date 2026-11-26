@@ -9,6 +9,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Zach Gracia</a>
@@ -19,19 +21,21 @@
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="cart.html" class="nav-cart">Shop TAD</a>
       </div>
-      <button class="nav-hamburger" aria-label="Open menu">
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div class="nav-mobile-overlay">
+  <div class="nav-mobile-overlay" id="mobile-menu">
     <a href="portfolio.html" class="nav-mobile-link">Portfolio</a>
     <a href="about.html" class="nav-mobile-link">About</a>
     <a href="publications.html" class="nav-mobile-link">Publications</a>
     <a href="contact.html" class="nav-mobile-link">Contact</a>
     <a href="cart.html" class="nav-mobile-link">Shop</a>
   </div>
+
+  <main id="main">
 
   <!-- ABOUT HERO -->
   <section class="about-hero">
@@ -213,6 +217,8 @@
       </ul>
     </div>
   </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
