@@ -806,3 +806,6 @@ main > .gallery-full {
 /* TAD logo wall: small square plates on a tight grid */
 .logo-wall { gap: 24px; }
 .logo-wall .ph { margin-bottom: 44px; }
+
+/* captions under tilted paper sit clear of the sheet's lowered corner */
+.ph.mount-paper .ph-label { padding-top: 18px; }
