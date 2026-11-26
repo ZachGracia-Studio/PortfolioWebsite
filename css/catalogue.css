@@ -737,3 +737,72 @@ main > .gallery-full {
   .pub-layout .pub-stage { display: none; }
   .pub-inline { display: block; width: 112px; height: 112px; object-fit: cover; background: #f1eee6; margin-bottom: 8px; }
 }
+
+/* case studies: stacked plates and slim "images to come" slots */
+.stack { display: flex; flex-direction: column; }
+.gallery-full.waiting .ph { aspect-ratio: 21 / 5; }
+.gallery-full.waiting .ph-label { position: static; text-align: center; padding: 0; color: var(--text-muted); }
+.gallery-full.waiting .ph-label::before { content: none; }
+.gallery-full.waiting .ph { counter-increment: none; margin-bottom: 0; border-style: dashed; border-width: 1px; }
+
+/* ==========================================================
+   TYPE MOMENTS: the title and the work share one layer.
+   The title crosses onto the plate and inverts where it does.
+   ========================================================== */
+.vnce-hero--cross .vnce-hero-content { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; align-items: center; }
+.vnce-hero--cross .vnce-hero-content > div:first-child { position: relative; z-index: 2; }
+.vnce-hero--cross .project-hero-title {
+  font-size: clamp(140px, 19vw, 300px);
+  line-height: 0.82;
+  mix-blend-mode: difference;
+  margin-right: -45%;
+  margin-bottom: 24px;
+}
+.vnce-hero--cross .vnce-character-placeholder { justify-content: flex-start; position: relative; z-index: 1; }
+.vnce-hero--cross .vnce-character-placeholder .ph { max-width: 500px !important; }
+.vnce-hero--cross .ph { margin-bottom: 40px; }
+
+/* VNCE: the plate is laid over the end of the title, like a print pinned over a poster */
+.vnce-hero--cross .project-hero-title { margin-right: 0; mix-blend-mode: normal; }
+.vnce-hero--cross .vnce-hero-content > div:first-child { z-index: 1; }
+.vnce-hero--cross .vnce-character-placeholder { margin-left: -32.5vw; z-index: 3; }
+.vnce-hero--cross .project-hero-tagline { max-width: 13ch; }
+
+.hero--cross .hero-content { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 0; }
+.hero--cross .hero-content > .hero-text { position: relative; z-index: 2; }
+.hero--cross .hero-title, .hero--cross .hero-roles { mix-blend-mode: difference; }
+.hero--cross .hero-title { font-size: clamp(96px, 15.5vw, 250px); }
+.hero--cross .hero-plate { position: relative; z-index: 1; width: 100%; max-width: 560px; justify-self: end; left: -18vw; }
+
+@media (max-width: 1024px) {
+  .vnce-hero--cross .vnce-hero-content { grid-template-columns: 1fr; gap: 32px; }
+  .vnce-hero--cross .project-hero-title, .hero--cross .hero-title, .hero--cross .hero-roles { margin-right: 0; mix-blend-mode: normal; }
+  .vnce-hero--cross .vnce-character-placeholder, .hero--cross .hero-plate { margin-left: 0; left: 0; }
+  .hero--cross .hero-plate { justify-self: start; }
+  .hero--cross .hero-content { grid-template-columns: 1fr; gap: 40px; }
+  .vnce-hero--cross .project-hero-title { font-size: clamp(96px, 26vw, 180px); }
+}
+
+/* Home: from the sketchbook, three process pieces on paper */
+.sketchbook { padding: 0 0 clamp(64px, 8vw, 112px); }
+.sketchbook-row {
+  max-width: calc(var(--max-width) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+.sketch-link { display: block; }
+.sketch-link .ph.mount-paper { transition: transform var(--transition); }
+.sketch-link:hover .ph.mount-paper, .sketch-link:focus-visible .ph.mount-paper { transform: rotate(0deg) translateY(-4px); }
+.sketch-link:nth-child(2) .ph.mount-paper { transform: rotate(0.6deg); }
+.sketch-link:nth-child(3) .ph.mount-paper { transform: rotate(-0.8deg); }
+@media (max-width: 768px) { .sketchbook-row { grid-template-columns: minmax(0, 1fr); gap: 8px; } }
+.hero-plate .ph.mount-paper { transform: rotate(-1deg); }
+.hero-plate .ph.mount-paper > img { inset: 3%; width: 94%; height: 94%; object-fit: cover; }
+
+/* TAD logo wall: small square plates on a tight grid */
+.logo-wall { gap: 24px; }
+.logo-wall .ph { margin-bottom: 44px; }
