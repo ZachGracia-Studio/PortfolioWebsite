@@ -18,6 +18,14 @@ if (hamburger && mobileOverlay) {
     hamburger.setAttribute('aria-expanded', String(open));
     hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     document.body.style.overflow = open ? 'hidden' : '';
+    // While the menu covers the page, keep keyboard focus inside it
+    document.querySelectorAll('main, footer, .skip-link').forEach(el => {
+      el.inert = open;
+    });
+    if (open) {
+      const first = mobileOverlay.querySelector('.nav-mobile-link');
+      if (first) first.focus();
+    }
   };
   hamburger.addEventListener('click', () => {
     setMenu(!mobileOverlay.classList.contains('open'));

@@ -342,8 +342,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
   text-align: center;
   padding: 20px;
 }
-.ph-label::before { content: '[ '; }
-.ph-label::after  { content: ' ]'; }
+.ph-label::before { content: '[ ' / ''; }
+.ph-label::after  { content: ' ]' / ''; }
 
 .ph-16-9  { aspect-ratio: 16/9; }
 .ph-4-3   { aspect-ratio: 4/3; }
@@ -537,6 +537,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
   display: block;
 }
 .featured-card:first-child { grid-row: span 2; }
+/* image, overlay and text share one grid cell, so the card grows if the text needs more room (WCAG 1.4.12) */
+.featured-card { display: grid; }
+.featured-card > * { grid-area: 1 / 1; }
+.featured-card-content { align-self: end; }
+.featured-card-image, .featured-card-image .ph { height: 100%; }
 
 .featured-card-image {
   width: 100%;
@@ -561,8 +566,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 .featured-card:hover .featured-card-overlay { opacity: 0.85; }
 
 .featured-card-content {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
+  position: relative;
   padding: 32px;
   transform: translateY(6px);
   transition: transform var(--transition);

@@ -36,5 +36,28 @@
 - **Checked here:** contrast of every visible text element on all 9 pages (rendered in Chromium), reflow at 320px, and keyboard Tab order. **Not checked:** real screen readers (VoiceOver/NVDA) and 200% browser zoom on a device.
 - **Left as is (passes AA or out of scope):** the teal accent as text (5.14 on the page, 4.85 on surfaces), the heading levels that jump from h1 to h3 (not an AA failure), and the exhibition venue column hidden on phones.
 
+## Critique pass (second round)
+
+I ran a design critique of the post-Pass-A site, then a rendered keyboard, text-spacing and target-size sweep of all 9 pages at 1440px and 375px. This round fixed:
+
+| WCAG | Issue | Fix |
+|---|---|---|
+| 2.4.3 Focus order | With the phone menu open, Tab past the last link went to page content hidden behind the menu | The page behind is `inert` while the menu is open. Focus moves to the first menu link on open and wraps to the logo |
+| 1.4.12 Text spacing | Home featured cards clipped their top line when a reader enlarged line and letter spacing | Image, overlay and text share one grid cell, so the card grows to fit its text. Desktop and tablet are pixel-identical to before. Phone cards are 20–40px taller at default settings |
+| 1.3.1 Structure | Headings jumped from h1 to h3 on Home, Work and Publications | Card titles are now h2. The classes are unchanged, so they look the same |
+| 2.4.4 / 3.2 (advisory) | Instagram and LinkedIn open a new tab without saying so | Hidden "(opens in a new tab)" text for screen readers |
+| Screen reader noise | "→" and "←" in ~30 links and buttons were read aloud as "right arrow". Placeholder captions read "[" and "]" | Arrows are `aria-hidden`, and the bracket pseudo-content has empty alt text |
+
+**Checked and fine:** every focusable element shows the focus ring, nothing focused sits under the fixed nav, there are no duplicate IDs, and nothing overflows at 320px.
+
+**Not changed (no AA requirement in 2.1, or out of scope):** nav, footer and "← Back" links are 17–21px tall. That passes WCAG 2.2's 24px rule through its spacing exception, but larger tap areas would help on phones (Pass C/D). The placeholder captions overlap card text when cards grow. That goes away when the real artwork replaces the placeholders (Pass E).
+
+**For later passes (from the critique, not accessibility):**
+- The repeated "View Work →" / "Explore →" link styling is a template pattern (C).
+- Six Work cards open the same Disney page (D).
+- The Publications cards and "Add link when published" notes are still live (B).
+
 ## Screenshots
+**`before-after.png`** (and `.html`) is the one-page visual breakdown: before (commit `ada4d9e`) against after for each fix, plus the three badge options rendered on the real page.
+
 `before-*` / `after-*`: contact form with focus on Email, the home stats labels, and Publications at 320px. `after-skip-link-320.png` shows the skip link on first Tab.
