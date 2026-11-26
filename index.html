@@ -13,8 +13,9 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/catalogue.css">
+  <script src="portrait/sketch-portrait.js"></script>
 </head>
-<body>
+<body class="has-motion">
 
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -67,9 +68,10 @@
       </div>
       </div>
       <figure class="hero-plate">
-        <div class="ph has-img mount-paper">
-          <img src="images/work/female-astronaut-character-bubble-helmet-1118.webp" srcset="images/work/female-astronaut-character-bubble-helmet-1118-800w.webp 800w, images/work/female-astronaut-character-bubble-helmet-1118.webp 1118w" sizes="(max-width: 768px) 100vw, 50vw" alt="Painted character study of a woman astronaut in a bubble helmet" width="1118" height="1600" loading="eager" fetchpriority="high">
-          <span class="ph-label">Astronaut, character study</span>
+        <div class="ph has-img mount-paper hero-draw" style="aspect-ratio: 1 / 1">
+          <img class="hero-final" src="portrait/assets/zg-portrait.webp" srcset="portrait/assets/zg-portrait-800w.webp 800w, portrait/assets/zg-portrait.webp 2048w" sizes="(max-width: 1024px) 90vw, 560px" alt="Pencil self-portrait of Zach Gracia" width="2048" height="2048" loading="eager" fetchpriority="high">
+          <sketch-portrait class="hero-sketch" src="portrait/assets/zg-portrait-800w.webp" stages="portrait/assets/zg-stage1-thumbnail.webp,portrait/assets/zg-stage2-gestural.webp,portrait/assets/zg-stage3-line.webp" variant="disciplined" duration="4" trigger="load" hover="off" alt="" aria-hidden="true"></sketch-portrait>
+          <span class="ph-label">Self-portrait, rough to finish</span>
         </div>
       </figure>
     </div>
@@ -181,6 +183,18 @@
     </div>
   </section>
 
+  <!-- CONTACT BAND -->
+  <section class="close-band">
+    <div class="close-band-inner">
+      <p class="label">Working on something?</p>
+      <h2 class="close-band-title">Tell me what you're making</h2>
+      <div class="close-band-actions">
+        <a href="contact.html" class="btn-primary">Say hello</a>
+        <a href="mailto:gracia.zachary@gmail.com" class="btn-ghost">gracia.zachary@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -203,5 +217,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/motion.js"></script>
 </body>
 </html>
