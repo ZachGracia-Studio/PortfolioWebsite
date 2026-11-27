@@ -12,17 +12,32 @@ if (nav) {
 const hamburger = document.querySelector('.nav-hamburger');
 const mobileOverlay = document.querySelector('.nav-mobile-overlay');
 if (hamburger && mobileOverlay) {
+  const setMenu = (open) => {
+    mobileOverlay.classList.toggle('open', open);
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+    // While the menu covers the page, keep keyboard focus inside it
+    document.querySelectorAll('main, footer, .skip-link').forEach(el => {
+      el.inert = open;
+    });
+    if (open) {
+      const first = mobileOverlay.querySelector('.nav-mobile-link');
+      if (first) first.focus();
+    }
+  };
   hamburger.addEventListener('click', () => {
-    const isOpen = mobileOverlay.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    setMenu(!mobileOverlay.classList.contains('open'));
   });
   mobileOverlay.querySelectorAll('.nav-mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileOverlay.classList.remove('open');
-      hamburger.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', () => setMenu(false));
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileOverlay.classList.contains('open')) {
+      setMenu(false);
+      hamburger.focus();
+    }
   });
 }
 
@@ -32,8 +47,12 @@ const projectCards = document.querySelectorAll('.project-card');
 if (filterTabs.length) {
   filterTabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      filterTabs.forEach(t => t.classList.remove('active'));
+      filterTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-pressed', 'false');
+      });
       tab.classList.add('active');
+      tab.setAttribute('aria-pressed', 'true');
       const filter = tab.dataset.filter;
       projectCards.forEach(card => {
         if (filter === 'all' || card.dataset.brand === filter) {
@@ -57,31 +76,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
     (isProjectPage && href === 'portfolio.html')
   ) {
     link.classList.add('active');
+    link.setAttribute('aria-current', 'page');
   }
 });
-
-// Contact form prevent default (placeholder behavior)
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = contactForm.querySelector('button[type="submit"]');
-    if (btn) {
-      btn.textContent = 'Sent —';
-      btn.disabled = true;
-    }
-  });
-}
-
-// Cart notify form
-const notifyForm = document.querySelector('.cart-notify');
-if (notifyForm) {
-  notifyForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = notifyForm.querySelector('.cart-notify-btn');
-    if (btn) {
-      btn.textContent = 'You\'re on the list';
-      btn.disabled = true;
-    }
-  });
-}

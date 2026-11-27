@@ -53,6 +53,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo">Zach Gracia</a>
@@ -63,13 +65,13 @@
         <a href="../contact.html" class="nav-link">Contact</a>
         <a href="../cart.html" class="nav-cart">Shop TAD</a>
       </div>
-      <button class="nav-hamburger" aria-label="Open menu">
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div class="nav-mobile-overlay">
+  <div class="nav-mobile-overlay" id="mobile-menu">
     <a href="../portfolio.html" class="nav-mobile-link">Portfolio</a>
     <a href="../about.html" class="nav-mobile-link">About</a>
     <a href="../publications.html" class="nav-mobile-link">Publications</a>
@@ -77,11 +79,13 @@
     <a href="../cart.html" class="nav-mobile-link">Shop</a>
   </div>
 
+  <main id="main">
+
   <!-- HERO -->
   <section class="project-hero">
     <div class="tad-hero-bg"></div>
     <div class="project-hero-content">
-      <a href="../portfolio.html" class="tad-back">← Back to Work</a>
+      <a href="../portfolio.html" class="tad-back"><span aria-hidden="true">←</span> Back to Work</a>
       <p class="project-hero-label">Original IP · Designer Toy Brand</p>
       <h1 class="project-hero-title">TAD</h1>
       <p class="project-hero-tagline">Create What You Can't Explain</p>
@@ -130,7 +134,7 @@
         </div>
         <div class="project-meta-item">
           <p class="project-meta-label">Shop</p>
-          <p class="project-meta-value"><a href="../cart.html" style="color: var(--accent);">TAD Shop →</a></p>
+          <p class="project-meta-value"><a href="../cart.html" style="color: var(--accent);">TAD Shop <span aria-hidden="true">→</span></a></p>
         </div>
       </div>
     </div>
@@ -206,7 +210,7 @@
       <div style="text-align: center; padding: clamp(40px, 6vw, 80px) 0 0; border-top: 1px solid var(--border);">
         <p class="label" style="margin-bottom: 16px;">Shop</p>
         <h2 style="font-family: var(--font-display); font-weight: 800; font-size: clamp(32px, 5vw, 56px); text-transform: uppercase; margin-bottom: 24px;">Get a TAD Drop</h2>
-        <a href="../cart.html" class="btn-primary">Shop TAD →</a>
+        <a href="../cart.html" class="btn-primary">Shop TAD <span aria-hidden="true">→</span></a>
       </div>
 
     </div>
@@ -214,9 +218,11 @@
 
   <!-- NAV BETWEEN PROJECTS -->
   <div style="padding: clamp(48px, 6vw, 72px) var(--gutter); border-top: 1px solid var(--border); max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-    <a href="../portfolio.html" class="btn-ghost">← All Work</a>
-    <a href="vnce.html" class="btn-ghost">VNCE →</a>
+    <a href="../portfolio.html" class="btn-ghost"><span aria-hidden="true">←</span> All Work</a>
+    <a href="vnce.html" class="btn-ghost">VNCE <span aria-hidden="true">→</span></a>
   </div>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -229,8 +235,8 @@
         <a href="../contact.html" class="footer-link">Contact</a>
       </nav>
       <div class="footer-social">
-        <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/zach_gracia/" class="footer-link" target="_blank" rel="noopener">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a href="https://www.linkedin.com/in/zacharygracia" class="footer-link" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a href="mailto:gracia.zachary@gmail.com" class="footer-link">Email</a>
       </div>
     </div>

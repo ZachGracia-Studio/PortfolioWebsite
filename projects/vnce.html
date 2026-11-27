@@ -56,6 +56,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo">Zach Gracia</a>
@@ -66,13 +68,13 @@
         <a href="../contact.html" class="nav-link">Contact</a>
         <a href="../cart.html" class="nav-cart">Shop TAD</a>
       </div>
-      <button class="nav-hamburger" aria-label="Open menu">
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div class="nav-mobile-overlay">
+  <div class="nav-mobile-overlay" id="mobile-menu">
     <a href="../portfolio.html" class="nav-mobile-link">Portfolio</a>
     <a href="../about.html" class="nav-mobile-link">About</a>
     <a href="../publications.html" class="nav-mobile-link">Publications</a>
@@ -80,17 +82,19 @@
     <a href="../cart.html" class="nav-mobile-link">Shop</a>
   </div>
 
+  <main id="main">
+
   <!-- HERO -->
   <section class="vnce-hero">
     <div class="vnce-hero-glow"></div>
     <div class="vnce-hero-content">
       <div>
-        <a href="../portfolio.html" class="vnce-back">← Back to Work</a>
+        <a href="../portfolio.html" class="vnce-back"><span aria-hidden="true">←</span> Back to Work</a>
         <p class="project-hero-label">Original IP · Character Design</p>
         <h1 class="project-hero-title">VNCE</h1>
         <p class="project-hero-tagline">Not a portfolio piece.<br>A world.</p>
         <div style="margin-top: 32px;">
-          <a href="#origin" class="btn-primary">Explore the World →</a>
+          <a href="#origin" class="btn-primary">Explore the World <span aria-hidden="true">→</span></a>
         </div>
       </div>
       <div class="vnce-character-placeholder">
@@ -241,9 +245,11 @@
 
   <!-- PROJECT NAV -->
   <div style="padding: clamp(48px, 6vw, 72px) var(--gutter); border-top: 1px solid var(--border); max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-    <a href="tad.html" class="btn-ghost">← TAD</a>
-    <a href="disney.html" class="btn-ghost">Disney & Beyond →</a>
+    <a href="tad.html" class="btn-ghost"><span aria-hidden="true">←</span> TAD</a>
+    <a href="disney.html" class="btn-ghost">Disney & Beyond <span aria-hidden="true">→</span></a>
   </div>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -256,8 +262,8 @@
         <a href="../contact.html" class="footer-link">Contact</a>
       </nav>
       <div class="footer-social">
-        <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/zach_gracia/" class="footer-link" target="_blank" rel="noopener">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a href="https://www.linkedin.com/in/zacharygracia" class="footer-link" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a href="mailto:gracia.zachary@gmail.com" class="footer-link">Email</a>
       </div>
     </div>

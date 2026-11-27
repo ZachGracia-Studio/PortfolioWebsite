@@ -9,6 +9,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Zach Gracia</a>
@@ -19,13 +21,13 @@
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="cart.html" class="nav-cart">Shop TAD</a>
       </div>
-      <button class="nav-hamburger" aria-label="Open menu">
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div class="nav-mobile-overlay">
+  <div class="nav-mobile-overlay" id="mobile-menu">
     <a href="portfolio.html" class="nav-mobile-link">Portfolio</a>
     <a href="about.html" class="nav-mobile-link">About</a>
     <a href="publications.html" class="nav-mobile-link">Publications</a>
@@ -33,17 +35,19 @@
     <a href="cart.html" class="nav-mobile-link">Shop</a>
   </div>
 
+  <main id="main">
+
   <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="page-header-inner">
       <span class="label" style="display:block; margin-bottom: 16px;">Selected Work</span>
       <h1 class="page-header-title">WORK</h1>
       <div class="filter-tabs">
-        <button class="filter-tab active" data-filter="all">All</button>
-        <button class="filter-tab" data-filter="tad">TAD</button>
-        <button class="filter-tab" data-filter="vnce">VNCE</button>
-        <button class="filter-tab" data-filter="disney">Disney</button>
-        <button class="filter-tab" data-filter="pro">Professional</button>
+        <button class="filter-tab active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-tab" aria-pressed="false" data-filter="tad">TAD</button>
+        <button class="filter-tab" aria-pressed="false" data-filter="vnce">VNCE</button>
+        <button class="filter-tab" aria-pressed="false" data-filter="disney">Disney</button>
+        <button class="filter-tab" aria-pressed="false" data-filter="pro">Professional</button>
       </div>
     </div>
   </div>
@@ -61,9 +65,9 @@
       <div class="project-card-info">
         <div class="project-card-meta">
           <p class="project-card-brand">TAD · Original IP</p>
-          <h3 class="project-card-title">TAD — Create What You Can't Explain</h3>
+          <h2 class="project-card-title">TAD — Create What You Can't Explain</h2>
         </div>
-        <span class="project-card-arrow">→</span>
+        <span class="project-card-arrow" aria-hidden="true">→</span>
       </div>
     </a>
 
@@ -77,9 +81,9 @@
       <div class="project-card-info">
         <div class="project-card-meta">
           <p class="project-card-brand">VNCE · Character IP</p>
-          <h3 class="project-card-title">VNCE — Character Design</h3>
+          <h2 class="project-card-title">VNCE — Character Design</h2>
         </div>
-        <span class="project-card-arrow">→</span>
+        <span class="project-card-arrow" aria-hidden="true">→</span>
       </div>
     </a>
 
@@ -93,9 +97,9 @@
       <div class="project-card-info">
         <div class="project-card-meta">
           <p class="project-card-brand">Disney · Consumer Products</p>
-          <h3 class="project-card-title">Doorables — Collectible of the Year</h3>
+          <h2 class="project-card-title">Doorables — Collectible of the Year</h2>
         </div>
-        <span class="project-card-arrow">→</span>
+        <span class="project-card-arrow" aria-hidden="true">→</span>
       </div>
     </a>
 
@@ -109,9 +113,9 @@
       <div class="project-card-info">
         <div class="project-card-meta">
           <p class="project-card-brand">TAD · Product Drop</p>
-          <h3 class="project-card-title">Drop 001</h3>
+          <h2 class="project-card-title">Drop 001</h2>
         </div>
-        <span class="project-card-arrow">→</span>
+        <span class="project-card-arrow" aria-hidden="true">→</span>
       </div>
     </a>
 
@@ -125,9 +129,9 @@
       <div class="project-card-info">
         <div class="project-card-meta">
           <p class="project-card-brand">Disney · Featured Artist</p>
-          <h3 class="project-card-title">Art of Snow White — Lithograph Set</h3>
+          <h2 class="project-card-title">Art of Snow White — Lithograph Set</h2>
         </div>
-        <span class="project-card-arrow">→</span>
+        <span class="project-card-arrow" aria-hidden="true">→</span>
       </div>
     </a>
 
@@ -141,9 +145,9 @@
       <div class="project-card-info">
         <div class="project-card-meta">
           <p class="project-card-brand">VNCE · World Building</p>
-          <h3 class="project-card-title">VNCE — The World</h3>
+          <h2 class="project-card-title">VNCE — The World</h2>
         </div>
-        <span class="project-card-arrow">→</span>
+        <span class="project-card-arrow" aria-hidden="true">→</span>
       </div>
     </a>
 
@@ -157,9 +161,9 @@
       <div class="project-card-info">
         <div class="project-card-meta">
           <p class="project-card-brand">3D Design · Concept</p>
-          <h3 class="project-card-title">Frozen 8 Inflatable Castle</h3>
+          <h2 class="project-card-title">Frozen 8 Inflatable Castle</h2>
         </div>
-        <span class="project-card-arrow">→</span>
+        <span class="project-card-arrow" aria-hidden="true">→</span>
       </div>
     </a>
 
@@ -173,9 +177,9 @@
       <div class="project-card-info">
         <div class="project-card-meta">
           <p class="project-card-brand">Concept Design · Disney</p>
-          <h3 class="project-card-title">Mickey Expandable Bus Camper</h3>
+          <h2 class="project-card-title">Mickey Expandable Bus Camper</h2>
         </div>
-        <span class="project-card-arrow">→</span>
+        <span class="project-card-arrow" aria-hidden="true">→</span>
       </div>
     </a>
 
@@ -189,9 +193,9 @@
       <div class="project-card-info">
         <div class="project-card-meta">
           <p class="project-card-brand">TAD · Apparel</p>
-          <h3 class="project-card-title">TAD — Apparel & Goods</h3>
+          <h2 class="project-card-title">TAD — Apparel & Goods</h2>
         </div>
-        <span class="project-card-arrow">→</span>
+        <span class="project-card-arrow" aria-hidden="true">→</span>
       </div>
     </a>
 
@@ -205,9 +209,9 @@
       <div class="project-card-info">
         <div class="project-card-meta">
           <p class="project-card-brand">Illustration · Character Design</p>
-          <h3 class="project-card-title">Illustration & Character Design</h3>
+          <h2 class="project-card-title">Illustration & Character Design</h2>
         </div>
-        <span class="project-card-arrow">→</span>
+        <span class="project-card-arrow" aria-hidden="true">→</span>
       </div>
     </a>
 
@@ -221,13 +225,15 @@
       <div class="project-card-info">
         <div class="project-card-meta">
           <p class="project-card-brand">2D Design · Products</p>
-          <h3 class="project-card-title">2D Design Collection</h3>
+          <h2 class="project-card-title">2D Design Collection</h2>
         </div>
-        <span class="project-card-arrow">→</span>
+        <span class="project-card-arrow" aria-hidden="true">→</span>
       </div>
     </a>
 
   </div>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -240,8 +246,8 @@
         <a href="contact.html" class="footer-link">Contact</a>
       </nav>
       <div class="footer-social">
-        <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/zach_gracia/" class="footer-link" target="_blank" rel="noopener">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a href="https://www.linkedin.com/in/zacharygracia" class="footer-link" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a href="mailto:gracia.zachary@gmail.com" class="footer-link">Email</a>
       </div>
     </div>

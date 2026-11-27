@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Zach Gracia</title>
-  <meta name="description" content="About Zach Gracia — Creative Director, Toy Designer, and Product Design Manager at The Walt Disney Company.">
+  <meta name="description" content="About Zach Gracia: artist, designer and world builder, and a creative leader in Disney consumer products.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -19,19 +21,21 @@
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="cart.html" class="nav-cart">Shop TAD</a>
       </div>
-      <button class="nav-hamburger" aria-label="Open menu">
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div class="nav-mobile-overlay">
+  <div class="nav-mobile-overlay" id="mobile-menu">
     <a href="portfolio.html" class="nav-mobile-link">Portfolio</a>
     <a href="about.html" class="nav-mobile-link">About</a>
     <a href="publications.html" class="nav-mobile-link">Publications</a>
     <a href="contact.html" class="nav-mobile-link">Contact</a>
     <a href="cart.html" class="nav-mobile-link">Shop</a>
   </div>
+
+  <main id="main">
 
   <!-- ABOUT HERO -->
   <section class="about-hero">
@@ -41,11 +45,10 @@
         <h1 class="about-hero-title">ZACH<br>GRACIA</h1>
       </div>
       <div>
-        <p class="about-hero-role">Creative Director · Product Design Manager</p>
+        <p class="about-hero-role">Artist · Designer · World Builder</p>
         <p class="about-hero-intro">
           A dynamic Latino artist and designer working at the intersection of toy design,
-          illustration, and original IP. Currently Product Design Manager at The Walt
-          Disney Company's Consumer Products division, based in Orlando, Florida.
+          illustration, and original IP. Today a creative leader in Disney consumer products, based in Orlando, Florida.
         </p>
       </div>
     </div>
@@ -71,8 +74,7 @@
           like Apple and Amazon, just to name a few.
         </p>
         <p>
-          Currently, Zach works as a <strong>Product Design Manager for the Consumer Products
-          division of The Walt Disney Company</strong>. Zach thrives on collaboration, bringing
+          Today, Zach is a <strong>creative leader in consumer products at The Walt Disney Company</strong>. Zach thrives on collaboration, bringing
           a strong teamwork mentality to everything he does, from building brands to art
           directing global product strategies.
         </p>
@@ -83,15 +85,15 @@
           character IP built to become its own world.
         </p>
         <div style="margin-top: 36px;">
-          <a href="portfolio.html" class="btn-ghost">View Work →</a>
+          <a href="portfolio.html" class="btn-ghost">View Work <span aria-hidden="true">→</span></a>
         </div>
       </div>
 
       <div class="about-credentials">
         <div>
-          <p class="credential-group-label">Current Role</p>
+          <p class="credential-group-label">Today</p>
           <div class="credential-item">
-            <strong>Product Design Manager</strong>
+            <strong>Creative leadership</strong>
             The Walt Disney Company — Consumer Products
           </div>
         </div>
@@ -113,6 +115,17 @@
           <div class="credential-item">
             <strong>VNCE</strong>
             Original Character IP
+          </div>
+        </div>
+        <div>
+          <p class="credential-group-label">Education</p>
+          <div class="credential-item">
+            <strong>Master of Digital Marketing and Artificial Intelligence</strong>
+            Wake Forest University
+          </div>
+          <div class="credential-item">
+            <strong>BA, Visual Development for Animation, minor in Character Design</strong>
+            Academy of Art University
           </div>
         </div>
         <div>
@@ -141,7 +154,7 @@
           <span class="achievement-venue">Industry Award</span>
         </li>
         <li class="achievement-item">
-          <span class="achievement-year">2018</span>
+          <span class="achievement-year">2017</span>
           <span class="achievement-title">Art of Snow White Lithograph Set — Disney Store Featured Artist</span>
           <span class="achievement-venue">Disney Store</span>
         </li>
@@ -214,6 +227,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
@@ -225,8 +240,8 @@
         <a href="contact.html" class="footer-link">Contact</a>
       </nav>
       <div class="footer-social">
-        <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/zach_gracia/" class="footer-link" target="_blank" rel="noopener">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a href="https://www.linkedin.com/in/zacharygracia" class="footer-link" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a href="mailto:gracia.zachary@gmail.com" class="footer-link">Email</a>
       </div>
     </div>

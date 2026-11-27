@@ -9,6 +9,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Zach Gracia</a>
@@ -19,19 +21,21 @@
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="cart.html" class="nav-cart">Shop TAD</a>
       </div>
-      <button class="nav-hamburger" aria-label="Open menu">
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <div class="nav-mobile-overlay">
+  <div class="nav-mobile-overlay" id="mobile-menu">
     <a href="portfolio.html" class="nav-mobile-link">Portfolio</a>
     <a href="about.html" class="nav-mobile-link">About</a>
     <a href="publications.html" class="nav-mobile-link">Publications</a>
     <a href="contact.html" class="nav-mobile-link">Contact</a>
     <a href="cart.html" class="nav-mobile-link">Shop</a>
   </div>
+
+  <main id="main">
 
   <!-- CART HERO -->
   <section class="cart-hero">
@@ -40,12 +44,20 @@
       <p class="cart-hero-eyebrow">TAD · Original Designer Toys & Goods</p>
       <h1 class="cart-hero-title">SHOP<br>TAD</h1>
       <p class="cart-hero-sub">Create What You Can't Explain</p>
-      <form class="cart-notify" onsubmit="this.querySelector('.cart-notify-btn').textContent = 'You\'re on the list'; this.querySelector('.cart-notify-btn').disabled = true; return false;">
+      <form class="cart-notify" name="tad-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="tad-waitlist">
+        <p hidden>
+          <label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+        <label class="visually-hidden" for="waitlist-email">Email address</label>
         <input
           class="cart-notify-input"
+          id="waitlist-email"
           type="email"
+          name="email"
+          autocomplete="email"
+          required
           placeholder="Email for drop notifications"
-          aria-label="Email address"
         >
         <button type="submit" class="cart-notify-btn">Notify Me</button>
       </form>
@@ -115,7 +127,7 @@
         <h2 style="font-family: var(--font-display); font-weight: 900; font-size: clamp(32px, 6vw, 72px); text-transform: uppercase; line-height: 0.95; margin-bottom: 28px;">
           Create What<br>You Can't<br>Explain
         </h2>
-        <a href="projects/tad.html" class="btn-ghost">Explore the Brand →</a>
+        <a href="projects/tad.html" class="btn-ghost">Explore the Brand <span aria-hidden="true">→</span></a>
       </div>
       <div>
         <p style="font-size: clamp(14px, 1.2vw, 16px); line-height: 1.85; color: var(--text-secondary); margin-bottom: 20px;">
@@ -132,6 +144,8 @@
     </div>
   </div>
 
+  </main>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
@@ -143,8 +157,8 @@
         <a href="contact.html" class="footer-link">Contact</a>
       </nav>
       <div class="footer-social">
-        <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://linkedin.com" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/zach_gracia/" class="footer-link" target="_blank" rel="noopener">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a href="https://www.linkedin.com/in/zacharygracia" class="footer-link" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
         <a href="mailto:gracia.zachary@gmail.com" class="footer-link">Email</a>
       </div>
     </div>
