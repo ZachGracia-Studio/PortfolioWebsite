@@ -89,11 +89,12 @@ The redesign's old Press page had no links and covered only Doorables and Snow W
 
 - The only source is Zach's original site copy: "captivating products that have generated over $500 million in global sales". *(Branch `claude/redesign-portfolio-tDlP4`, `about.html`)*
 - Neither résumé and neither repo defines it further: not retail vs. wholesale, the period, or which products.
-- **Status: needs Zach.** Either define it (measure, period, product scope), or replace it with claims the résumé already supports:
+- **Resolved 2026-11-27 (Zach):** the $500 million figure is retired from the site. In its place, the site cites claims from the Résumé 2026:
   - Doorables, one of Disney's top-selling collectibles of all time;
-  - 13,000+ licensee submissions a year;
-  - the #1 character franchise for ages 2–5 (Disney Junior);
-  - Topps Disney Chrome sold out at retail.
+  - the Disney Junior portfolio as it became the #1 character franchise for ages 2–5;
+  - 13,000+ licensee submissions a year.
+
+  Don't reintroduce the $500 million figure unless Zach supplies its definition.
 
 ## 7. CV
 
@@ -106,11 +107,10 @@ The redesign's old Press page had no links and covered only Doorables and Snow W
 
 ## 8. Open decisions (need Zach)
 
-1. **$500 million:** define it, or swap in the résumé-backed proof points in section 6.
-2. **Public CV:** which résumé to base it on. It will have no phone number and will describe roles rather than print titles.
-3. **Title on the live site:** the live site prints "Lead Product Designer". Keep the redesign's softer "creative leader" wording, or align the two sites?
-4. **Degree wording:**
+1. **Public CV:** which résumé to base it on. It will have no phone number and will describe roles rather than print titles.
+2. **Title on the live site:** the live site prints "Lead Product Designer". Keep the redesign's softer "creative leader" wording, or align the two sites?
+3. **Degree wording:**
    - Zach stated a "Master of Digital Marketing and Artificial Intelligence". The résumés and the live site say "Master's in Digital Marketing".
    - The résumés say "BFA"; the redesign says "BA".
    - Confirm the exact degree names.
-5. **Son's name:** the live site names him; the redesign doesn't. Confirm which is preferred.
+4. **Son's name:** the live site names him; the redesign doesn't. Confirm which is preferred.
