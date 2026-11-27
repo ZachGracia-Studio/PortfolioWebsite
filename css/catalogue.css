@@ -858,3 +858,42 @@ main > .gallery-full {
 /* home hero: the portrait is a still, no entrance on the sheet */
 .has-motion .hero-plate .ph.mount-paper { animation: none; }
 .hero-plate .ph.mount-paper > img { inset: 4%; width: 92%; height: 92%; object-fit: contain; }
+
+/* ---------- Disney: project index ---------- */
+.project-index {
+  max-width: calc(var(--max-width) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 48px var(--gutter) 8px;
+}
+.project-index ol { list-style: none; margin: 16px 0 0; padding: 0; border-top: 2px solid var(--keyline); }
+.project-index li { border-bottom: 1px solid var(--border); }
+.project-index a {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: baseline;
+  padding: 14px 0;
+  min-height: 44px;
+  transition: background-color var(--transition-fast);
+}
+.project-index a:hover, .project-index a:focus-visible { background: var(--bg-surface); }
+.pidx-n { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--accent); }
+.pidx-t { font-family: var(--font-ui); font-size: 22px; font-style: italic; color: var(--text-primary); }
+.pidx-l { font-size: 15px; color: var(--text-muted); text-align: right; }
+.sub-project { scroll-margin-top: calc(var(--nav-height) + 24px); }
+@media (max-width: 768px) { .pidx-l { display: none; } .project-index a { grid-template-columns: 40px 1fr; } }
+
+/* ---------- case studies: a real "next" at the end ---------- */
+.project-body + div[style*="justify-content"] { align-items: flex-end !important; padding-top: 56px !important; padding-bottom: 72px !important; }
+.project-body + div[style*="justify-content"] .btn-ghost:last-child {
+  display: inline-flex; flex-direction: column; align-items: flex-end; gap: 6px;
+  font-family: var(--font-ui); font-size: clamp(28px, 3.4vw, 44px); line-height: 1.1; text-decoration: none;
+}
+.project-body + div[style*="justify-content"] .btn-ghost:last-child::before {
+  content: 'Next'; font-size: 15px; color: var(--text-muted); font-style: normal;
+}
+.project-body + div[style*="justify-content"] .btn-ghost:last-child:hover { color: var(--text-primary); }
+
+/* ---------- Home: tighter rhythm between "In brief" and About ---------- */
+.index-line + .about-teaser { padding-top: 40px; }
+.index-line { padding-bottom: 40px; }
