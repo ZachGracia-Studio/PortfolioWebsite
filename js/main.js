@@ -68,7 +68,7 @@ if (filterTabs.length) {
 // Active nav link
 const currentFile = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-link').forEach(link => {
-  const href = link.getAttribute('href');
+  const href = (link.getAttribute('href') || '').replace(/^(\.\.\/)+/, '');
   const isProjectPage = currentFile && window.location.pathname.includes('/projects/');
   if (
     href === currentFile ||

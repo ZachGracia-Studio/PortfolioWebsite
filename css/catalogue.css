@@ -914,3 +914,6 @@ main > .gallery-full {
 @media (prefers-reduced-motion: reduce) { .index-jump { transition: none; } }
 .disney-page .sub-project { padding-bottom: 88px; margin-bottom: 88px; }
 @media (max-width: 768px) { .disney-page .sub-project { padding-bottom: 64px; margin-bottom: 64px; } }
+
+/* phone menu button: 44px tap area without a bigger icon */
+.nav-hamburger { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; margin-right: -9px; }

@@ -63,7 +63,7 @@
   <div class="pub-layout">
   <div class="publications-grid">
 
-    <div class="pub-card" tabindex="0" data-src="images/work/disney-doorables-lineup-front-signature-doors-1600.webp" data-alt="Disney Doorables figures lined up in front of their signature doors" data-caption="Doorables">
+    <div class="pub-card" tabindex="0" data-src="images/work/disney-doorables-lineup-front-signature-doors-1600.webp" data-srcset="images/work/disney-doorables-lineup-front-signature-doors-1600-800w.webp 800w, images/work/disney-doorables-lineup-front-signature-doors-1600.webp 1600w" data-alt="Disney Doorables figures lined up in front of their signature doors" data-caption="Doorables">
       <img class="pub-inline" src="images/work/disney-doorables-lineup-front-signature-doors-1600.webp" alt="" width="1600" height="856" loading="lazy">
       <div class="pub-text">
       <p class="pub-card-type">Press · industry</p>
@@ -75,7 +75,7 @@
       </div>
     </div>
 
-    <div class="pub-card" tabindex="0" data-src="images/work/snow-white-lithograph-final-painted-artwork-1131.webp" data-alt="Final painted Snow White lithograph artwork" data-caption="Art of Snow White, 2017">
+    <div class="pub-card" tabindex="0" data-src="images/work/snow-white-lithograph-final-painted-artwork-1131.webp" data-srcset="images/work/snow-white-lithograph-final-painted-artwork-1131-800w.webp 800w, images/work/snow-white-lithograph-final-painted-artwork-1131.webp 1131w" data-alt="Final painted Snow White lithograph artwork" data-caption="Art of Snow White, 2017">
       <img class="pub-inline" src="images/work/snow-white-lithograph-final-painted-artwork-1131.webp" alt="" width="1131" height="1600" loading="lazy">
       <div class="pub-text">
       <p class="pub-card-type">Press · Disney</p>
@@ -124,7 +124,7 @@
       if (!stage) return;
       const img = stage.querySelector('img');
       const label = stage.querySelector('.ph-label');
-      const first = { src: img.getAttribute('src'), alt: img.alt, caption: label.textContent };
+      const first = { src: img.getAttribute('src'), srcset: img.getAttribute('srcset') || '', alt: img.alt, caption: label.textContent };
       let current = first.src, timer;
       const show = (d) => {
         if (d.src === current) return;
@@ -132,12 +132,13 @@
         stage.classList.add('is-turning');
         clearTimeout(timer);
         timer = setTimeout(() => {
+          if (d.srcset) img.setAttribute('srcset', d.srcset); else img.removeAttribute('srcset');
           img.src = d.src; img.alt = d.alt; label.textContent = d.caption;
           stage.classList.remove('is-turning');
         }, 160);
       };
       document.querySelectorAll('.pub-card[data-src]').forEach((card) => {
-        const d = { src: card.dataset.src, alt: card.dataset.alt, caption: card.dataset.caption };
+        const d = { src: card.dataset.src, srcset: card.dataset.srcset || '', alt: card.dataset.alt, caption: card.dataset.caption };
         card.addEventListener('mouseenter', () => show(d));
         card.addEventListener('focusin', () => show(d));
       });
