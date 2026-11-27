@@ -897,3 +897,20 @@ main > .gallery-full {
 /* ---------- Home: tighter rhythm between "In brief" and About ---------- */
 .index-line + .about-teaser { padding-top: 40px; }
 .index-line { padding-bottom: 40px; }
+
+/* Disney & Beyond: side plate in the opening, capped tall plates, jump back to the index */
+.disney-hero .vnce-character-placeholder { justify-content: flex-end; }
+/* a long page: full-width plates stop at 62% of the screen height instead of 78% */
+.disney-page .project-body .gallery-full > .ph.has-img[style*="--r"] { max-width: min(100%, calc(62vh * var(--r))); }
+.index-jump {
+  position: fixed; right: 24px; bottom: 24px; z-index: 50;
+  font: italic 15px/1 var(--font-body, 'Newsreader', serif); color: var(--text-primary);
+  background: var(--bg); border: 1px solid var(--keyline, rgba(238,234,226,.2)); padding: 10px 14px;
+  text-decoration: none; opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s;
+}
+.index-jump.is-shown { opacity: 1; visibility: visible; }
+.index-jump:hover, .index-jump:focus-visible { border-color: var(--text-primary); }
+@media (max-width: 768px) { .index-jump { right: 16px; bottom: 16px; } }
+@media (prefers-reduced-motion: reduce) { .index-jump { transition: none; } }
+.disney-page .sub-project { padding-bottom: 88px; margin-bottom: 88px; }
+@media (max-width: 768px) { .disney-page .sub-project { padding-bottom: 64px; margin-bottom: 64px; } }
