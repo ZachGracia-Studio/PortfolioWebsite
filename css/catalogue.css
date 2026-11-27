@@ -917,3 +917,11 @@ main > .gallery-full {
 
 /* phone menu button: 44px tap area without a bigger icon */
 .nav-hamburger { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; margin-right: -9px; }
+
+/* About: short recognition list with a pointer to the CV */
+.achievements-more { margin-top: 28px; color: var(--text-secondary); font-size: 17px; display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: baseline; }
+/* Contact on phones and tablets: the form comes before the portrait */
+@media (max-width: 1024px) {
+  .contact-inner--sheet { grid-template-areas: "text" "form" "sheet"; }
+  .contact-inner--sheet .contact-form { padding-top: 32px; }
+}
